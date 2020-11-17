@@ -7,22 +7,28 @@ public class Queue <T>{
     private QueueNode last;
 
     public Queue(){
-
+        size =0;
+        first = null;
+        last = null;
     }
 
     public void enqueue(T Data){ //add element
         QueueNode data = new QueueNode(Data);
         if (first == null){ //if first
             this.first = data;
+            size++;
         }
         else if(last == null){ //second thing
             this.last = data;
             data.setParent(first);
+            size++;
         }
         else { //more than 2 in line
             data.setParent(last);
             last=data;
+            size++;
         }
+
 
     }
 

@@ -39,13 +39,9 @@ public class QueueNode<T>{
     //Mutator--Parent node
     public void setParent(QueueNode p) {
         this.parent = p;
-        updateParent(p);
     }
     //Mutator--private version to update the parent of the child node when you use setChild
     // prevents infinite loop --> stack overflow
-    private void updateParent(QueueNode c){
-        c.parent = this;
-    }
     //Mutator--private version to update the child of the parent node when you use setParent
     // prevents infinite loop --> stack overflow
 
